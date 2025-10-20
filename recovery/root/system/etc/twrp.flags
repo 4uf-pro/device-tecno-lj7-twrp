@@ -1,0 +1,83 @@
+# TWRP Configuration Flags for MT6878 (lj7_h782)
+# Mount point fstype device flags
+
+Boot & Critical Partitions
+/preloader emmc /dev/block/by-name/preloader_a flags=display="Preloader";backup=1;flashimg=1;slotselect
+/lk emmc /dev/block/by-name/lk_a flags=display="LK";backup=1;flashimg=1;slotselect
+/boot emmc /dev/block/by-name/boot_a flags=display="Boot";backup=1;flashimg=1;slotselect
+/vendor_boot emmc /dev/block/by-name/vendor_boot_a flags=display="Vendor Boot";backup=1;flashimg=1;slotselect
+/init_boot emmc /dev/block/by-name/init_boot_a flags=display="Init Boot";backup=1;flashimg=1;slotselect
+/dtbo emmc /dev/block/by-name/dtbo_a flags=display="DTBO";backup=1;flashimg=1;slotselect
+
+TrustZone & Security
+/tee emmc /dev/block/by-name/tee_a flags=display="TEE";backup=1;flashimg=1;slotselect
+/tkv emmc /dev/block/by-name/tkv_a flags=display="TKV";backup=1;flashimg=1;slotselect
+
+VBmeta & Verification
+/vbmeta emmc /dev/block/by-name/vbmeta_a flags=display="VBMeta";backup=1;flashimg=1;slotselect
+/vbmeta_system emmc /dev/block/by-name/vbmeta_system_a flags=display="VBMeta System";backup=1;flashimg=1;slotselect
+/vbmeta_vendor emmc /dev/block/by-name/vbmeta_vendor_a flags=display="VBMeta Vendor";backup=1;flashimg=1;slotselect
+
+MTK Firmware Partitions
+/modem emmc /dev/block/by-name/modem_a flags=display="Modem";backup=1;flashimg=1;slotselect
+/spmfw emmc /dev/block/by-name/spmfw_a flags=display="SPM FW";backup=1;flashimg=1;slotselect
+/mcf_ota emmc /dev/block/by-name/mcf_ota_a flags=display="MCF OTA";backup=1;flashimg=1;slotselect
+/pi_img emmc /dev/block/by-name/pi_img_a flags=display="PI Image";backup=1;flashimg=1;slotselect
+/dpm emmc /dev/block/by-name/dpm_a flags=display="DPM";backup=1;flashimg=1;slotselect
+/scp emmc /dev/block/by-name/scp_a flags=display="SCP";backup=1;flashimg=1;slotselect
+/ccu emmc /dev/block/by-name/ccu_a flags=display="CCU";backup=1;flashimg=1;slotselect
+/vcp emmc /dev/block/by-name/vcp_a flags=display="VCP";backup=1;flashimg=1;slotselect
+/sspm emmc /dev/block/by-name/sspm_a flags=display="SSPM";backup=1;flashimg=1;slotselect
+/mcupm emmc /dev/block/by-name/mcupm_a flags=display="MCUPM";backup=1;flashimg=1;slotselect
+/gpueb emmc /dev/block/by-name/gpueb_a flags=display="GPU EB";backup=1;flashimg=1;slotselect
+/apusys emmc /dev/block/by-name/apusys_a flags=display="APU System";backup=1;flashimg=1;slotselect
+/gz emmc /dev/block/by-name/gz_a flags=display="GZ";backup=1;flashimg=1;slotselect
+
+Connectivity
+/connsys_bt emmc /dev/block/by-name/connsys_bt_a flags=display="BT ConnSys";backup=1;flashimg=1;slotselect
+/connsys_wifi emmc /dev/block/by-name/connsys_wifi_a flags=display="WiFi ConnSys";backup=1;flashimg=1;slotselect
+/connsys_gnss emmc /dev/block/by-name/connsys_gnss_a flags=display="GNSS ConnSys";backup=1;flashimg=1;slotselect
+
+System & Logical Partitions
+/system ext4 system flags=display="System";logical;backup=1;slotselect
+/system_ext ext4 system_ext flags=display="SystemExt";logical;backup=1;slotselect
+/vendor ext4 vendor flags=display="Vendor";logical;backup=1;slotselect
+/odm ext4 odm flags=display="ODM";logical;backup=1;slotselect
+/product ext4 product flags=display="Product";logical;backup=1;slotselect
+/vendor_dlkm ext4 vendor_dlkm flags=display="Vendor DLKM";logical;backup=1;slotselect
+/system_dlkm ext4 system_dlkm flags=display="System DLKM";logical;backup=1;slotselect
+
+Data & Cache
+/data f2fs /dev/block/by-name/userdata flags=display="User Data";wipeingui;backup=1
+/cache f2fs /dev/block/by-name/cache flags=display="Cache";wipeingui
+/metadata f2fs /dev/block/by-name/metadata flags=display="Metadata"
+
+Persistent & Misc
+/misc emmc /dev/block/by-name/misc flags=display="Misc"
+/persist emmc /dev/block/by-name/persist flags=display="Persist";flashimg=1
+/logo emmc /dev/block/by-name/logo_a flags=display="Logo";backup=1;flashimg=1;slotselect
+/efuse emmc /dev/block/by-name/efuse flags=display="EFuse";flashimg=1
+/tranfs ext4 /dev/block/by-name/tranfs flags=display="TranFS";flashimg=1
+
+MTK Specific Partitions
+/proinfo emmc /dev/block/by-name/proinfo flags=display="Product Info"
+/vb emmc /dev/block/by-name/vb flags=display="Verified Boot"
+/para emmc /dev/block/by-name/para flags=display="Parameter"
+/expdb emmc /dev/block/by-name/expdb flags=display="Engineering Database"
+/frp emmc /dev/block/by-name/frp flags=display="Factory Reset Protection"
+/nvcfg emmc /dev/block/by-name/nvcfg flags=display="NV Config"
+/nvdata emmc /dev/block/by-name/nvdata flags=display="NV Data"
+/md_sec emmc /dev/block/by-name/md_sec flags=display="MD Security"
+/protect1 emmc /dev/block/by-name/protect1 flags=display="Protect1"
+/protect2 emmc /dev/block/by-name/protect2 flags=display="Protect2"
+/tdfs emmc /dev/block/by-name/tdfs flags=display="TDFS"
+/transec emmc /dev/block/by-name/transec flags=display="TranSec"
+/seccfg emmc /dev/block/by-name/seccfg flags=display="Security Config"
+/otp emmc /dev/block/by-name/otp flags=display="OTP"
+/pstore emmc /dev/block/by-name/pstore flags=display="PStore"
+/nvram emmc /dev/block/by-name/nvram flags=display="NVRAM"
+/boot_para emmc /dev/block/by-name/boot_para flags=display="Boot Parameter"
+/dram_para emmc /dev/block/by-name/dram_para flags=display="DRAM Parameter"
+
+External Storage
+/storage/sdcard0 vfat /dev/block/mmcblk1p1 flags=display="SD Card";storage;removable;wipeingui
